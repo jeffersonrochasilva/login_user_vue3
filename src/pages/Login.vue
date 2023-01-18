@@ -17,10 +17,8 @@ import Timeline from "@/components/Timeline/index.vue";
   justify-content: center;
   align-items: center;
   &__container {
-    width: 500px;
-    height: 300px;
     border-radius: 5px;
-    background: #f0c32d;
+    // background: #f0c32d;
   }
 }
 </style>
