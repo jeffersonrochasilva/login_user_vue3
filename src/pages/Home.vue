@@ -1,13 +1,13 @@
 <template>
   <div class="login">
     <div class="login__container">
-      <Timeline />
+      <Register />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Timeline from "@/components/timeline/index.vue";
+import Register from "@/components/register/index.vue";
 </script>
 
 <style lang="scss" scoped>
