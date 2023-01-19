@@ -1,14 +1,13 @@
 <template>
   <div class="login">
     <div class="login__container">
-      <Register />
+      home
+      <h1></h1>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-import Register from "@/components/register/index.vue";
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .login {

@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login__container">
-      <form @submit="Entrar(e)" class="login__container__form">
+      <form @submit="Entrar" class="login__container__form">
         <input
           class="login__container__form__input"
           type="text"
@@ -13,6 +13,7 @@
           placeholder="Digite sua Senha"
         />
         <v-btn class="login__container__form__btn" type="submit">Entrar</v-btn>
+        <a href="/register">Não tenho sou cadastrado</a>
       </form>
     </div>
   </div>
@@ -35,7 +36,7 @@ function Entrar() {
     // background: #f0c32d;
     &__form {
       width: 500px;
-      height: 150px;
+      height: 190px;
       border-radius: 4px;
       border: 1px solid gray;
       display: flex;
@@ -52,6 +53,13 @@ function Entrar() {
         margin-top: 15px;
         background: rgb(0, 0, 255);
         color: #fff;
+      }
+      a {
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 12px;
+        margin: 7px;
+        color: gray;
       }
     }
   }
