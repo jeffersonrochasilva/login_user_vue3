@@ -1,8 +1,8 @@
 <template>
   <div class="register">
+    <h3>{{ response }}</h3>
     <form class="form">
       <Timeline />
-
       <input
         v-if="generalStore.stepTimeline === 0"
         class="form__name"
@@ -54,13 +54,15 @@
 </template>
 
 <script lang="ts" setup>
-import { Ref, ref } from "vue";
+import { Ref, ref, onMounted } from "vue";
 import Timeline from "@/components/timeline/index.vue";
 import request from "@/utils/request";
 import { useGeneralStore } from "@/store/general";
 import router from "@/router";
 
 const generalStore = useGeneralStore();
+
+const response: Ref<any> = ref([]);
 
 const form = ref({
   name: "",
@@ -71,22 +73,29 @@ const form = ref({
   password: "",
 });
 
-// async function testeAxios() {
+onMounted(() => {
+  testeAxios();
+});
 
-//   await request
-//     .get("usuarios.json")
-//     .then((res) => {
-//       usuarios.value = res.data;
-//       console.log("resposta", usuarios.value);
-//     })
-//     .catch((Error) => console.log(Error));
-// }
+async function testeAxios() {
+  await request
+    .get("usuarios.json")
+    .then((res) => {
+      response.value = res.data;
+      console.log("%cresposta", "color: red;", response.value);
+    })
+    .catch((Error) => console.log(Error));
+}
 
 async function salvar() {
   if (generalStore.stepTimeline === 0) {
+    if (!form.value.name || !form.value.lastName) {
+      return alert("preencha os campos");
+    }
     return generalStore.setStepTimeline(1);
   }
   if (generalStore.stepTimeline === 1) {
+    if (!form.value.cpf || !form.value.age) return alert("preencha os campos");
     return generalStore.setStepTimeline(2);
   }
 
