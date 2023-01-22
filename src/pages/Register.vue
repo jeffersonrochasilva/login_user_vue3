@@ -50,6 +50,104 @@
       }}</v-btn>
       <a href="/">Fazer login</a>
     </form>
+    <form class="form">
+      <Timeline />
+      <input
+        v-if="generalStore.stepTimeline === 0"
+        class="form__name"
+        type="text"
+        placeholder="Digite seu Nome"
+        v-model="form.name"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 0"
+        class="form__sobrenome"
+        type="text"
+        placeholder="Digite seu Sobrenome"
+        v-model="form.lastName"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 1"
+        class="form__cpf"
+        type="text"
+        placeholder="Digite seu cpf"
+        v-model="form.cpf"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 1"
+        class="form__age"
+        type="text"
+        placeholder="Digite sue idade"
+        v-model="form.age"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 2"
+        class="form__email"
+        type="text"
+        placeholder="Digite seu email"
+        v-model="form.email"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 2"
+        class="form__password"
+        type="password"
+        placeholder="Digite sua Senha"
+        v-model="form.password"
+      />
+      <v-btn class="form__btn" @click="salvar">{{
+        generalStore.stepTimeline === 2 ? "Cadastrar" : "Proceguir"
+      }}</v-btn>
+      <a href="/">Fazer login</a>
+    </form>
+    <form class="form">
+      <Timeline />
+      <input
+        v-if="generalStore.stepTimeline === 0"
+        class="form__name"
+        type="text"
+        placeholder="Digite seu Nome"
+        v-model="form.name"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 0"
+        class="form__sobrenome"
+        type="text"
+        placeholder="Digite seu Sobrenome"
+        v-model="form.lastName"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 1"
+        class="form__cpf"
+        type="text"
+        placeholder="Digite seu cpf"
+        v-model="form.cpf"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 1"
+        class="form__age"
+        type="text"
+        placeholder="Digite sue idade"
+        v-model="form.age"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 2"
+        class="form__email"
+        type="text"
+        placeholder="Digite seu email"
+        v-model="form.email"
+      />
+      <input
+        v-if="generalStore.stepTimeline === 2"
+        class="form__password"
+        type="password"
+        placeholder="Digite sua Senha"
+        v-model="form.password"
+      />
+      <v-btn class="form__btn" @click="salvar">{{
+        generalStore.stepTimeline === 2 ? "Cadastrar" : "Proceguir"
+      }}</v-btn>
+      <a href="/">Fazer login</a>
+    </form>
   </div>
 </template>
 
